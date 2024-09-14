@@ -2359,9 +2359,6 @@ const CONST = {
             ADMIN: 'admin',
             CONTROL: 'control',
         },
-        DEFAULT_MAX_EXPENSE_AGE: 90,
-        DEFAULT_MAX_EXPENSE_AMOUNT: 200000,
-        DEFAULT_MAX_AMOUNT_NO_RECEIPT: 2500,
         REQUIRE_RECEIPTS_OVER_OPTIONS: {
             DEFAULT: 'default',
             NEVER: 'never',
