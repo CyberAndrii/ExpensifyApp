@@ -1,0 +1,13 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20.15.1"
+    },
+    "ghcr.io/devcontainers/features/ruby:1": {
+      "version": "3.3.4"
+    }
+  },
+  "forwardPorts": [8080, 8081, 8082, 8083, 8084]
+}
