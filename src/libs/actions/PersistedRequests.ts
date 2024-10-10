@@ -92,6 +92,7 @@ function updateOngoingRequest(newRequest: Request) {
 }
 
 function processNextRequest(): Request | null {
+    console.warn(`ddd PersistedRequests.processNextRequest()`, {ongoingRequest})
     if (ongoingRequest) {
         Log.info(`Ongoing Request already set returning same one ${ongoingRequest.commandName}`);
         return ongoingRequest;

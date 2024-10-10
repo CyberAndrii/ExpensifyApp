@@ -42,6 +42,7 @@ import {KEYS_TO_PRESERVE, openApp} from '@userActions/App';
 import * as App from '@userActions/App';
 import * as Device from '@userActions/Device';
 import * as PriorityMode from '@userActions/PriorityMode';
+import * as QueuedOnyxUpdates from "@userActions/QueuedOnyxUpdates";
 import redirectToSignIn from '@userActions/SignInRedirect';
 import Timing from '@userActions/Timing';
 import * as Welcome from '@userActions/Welcome';
@@ -748,6 +749,7 @@ function resetHomeRouteParams() {
  * - Clears all current params of the Home route - the login page URL should not contain any parameter
  */
 function cleanupSession() {
+    console.warn(`ddd cleanupSession()`)
     Pusher.disconnect();
     Timers.clearAll();
     Welcome.resetAllChecks();
@@ -755,6 +757,7 @@ function cleanupSession() {
     MainQueue.clear();
     HttpUtils.cancelPendingRequests();
     PersistedRequests.clear();
+    //QueuedOnyxUpdates.clear(KEYS_TO_PRESERVE);
     NetworkConnection.clearReconnectionCallbacks();
     SessionUtils.resetDidUserLogInDuringSession();
     resetHomeRouteParams();

@@ -1,5 +1,6 @@
 import type {OnyxUpdate} from 'react-native-onyx';
 import Onyx from 'react-native-onyx';
+import type {OnyxKey} from '@src/ONYXKEYS';
 
 // In this file we manage a queue of Onyx updates while the SequentialQueue is processing. There are functions to get the updates and clear the queue after saving the updates in Onyx.
 
@@ -14,9 +15,16 @@ function queueOnyxUpdates(updates: OnyxUpdate[]): Promise<void> {
 }
 
 function flushQueue(): Promise<void> {
+    console.warn(`ddd QueuedOnyxUpdates.flushQueue()`,{queuedOnyxUpdates})
     return Onyx.update(queuedOnyxUpdates).then(() => {
+        console.warn(`ddd QueuedOnyxUpdates.flushQueue() update finished`,{queuedOnyxUpdates})
         queuedOnyxUpdates = [];
     });
 }
 
-export {queueOnyxUpdates, flushQueue};
+function clear(keysToPreserve: OnyxKey[]) {
+    console.warn(`ddd QueuedOnyxUpdates.clear()`)
+    queuedOnyxUpdates = queuedOnyxUpdates.filter((onyxUpdate) => keysToPreserve.includes(onyxUpdate.key as OnyxKey))
+}
+
+export {queueOnyxUpdates, flushQueue, clear};
