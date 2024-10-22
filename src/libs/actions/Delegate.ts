@@ -7,6 +7,7 @@ import * as ErrorUtils from '@libs/ErrorUtils';
 import Log from '@libs/Log';
 import * as NetworkStore from '@libs/Network/NetworkStore';
 import * as SequentialQueue from '@libs/Network/SequentialQueue';
+import * as QueuedOnyxUpdates from '@userActions/QueuedOnyxUpdates';
 import CONST from '@src/CONST';
 import ONYXKEYS from '@src/ONYXKEYS';
 import type {Delegate, DelegatedAccess, DelegateRole} from '@src/types/onyx/Account';
@@ -89,7 +90,10 @@ function connect(email: string) {
                 return;
             }
             return SequentialQueue.waitForIdle()
-                .then(() => Onyx.clear(KEYS_TO_PRESERVE_DELEGATE_ACCESS))
+                .then(() => {
+                    QueuedOnyxUpdates.clear(KEYS_TO_PRESERVE_DELEGATE_ACCESS);
+                    Onyx.clear(KEYS_TO_PRESERVE_DELEGATE_ACCESS);
+                })
                 .then(() => {
                     // Update authToken in Onyx and in our local variables so that API requests will use the new authToken
                     updateSessionAuthTokens(response?.restrictedToken, response?.encryptedAuthToken);
@@ -152,7 +156,10 @@ function disconnect() {
             }
 
             return SequentialQueue.waitForIdle()
-                .then(() => Onyx.clear(KEYS_TO_PRESERVE_DELEGATE_ACCESS))
+                .then(() => {
+                    QueuedOnyxUpdates.clear(KEYS_TO_PRESERVE_DELEGATE_ACCESS);
+                    Onyx.clear(KEYS_TO_PRESERVE_DELEGATE_ACCESS);
+                })
                 .then(() => {
                     // Update authToken in Onyx and in our local variables so that API requests will use the new authToken
                     updateSessionAuthTokens(response?.authToken, response?.encryptedAuthToken);
