@@ -6,6 +6,7 @@ import type * as OnyxTypes from './types/onyx';
 import type Onboarding from './types/onyx/Onboarding';
 import type AssertTypesEqual from './types/utils/AssertTypesEqual';
 import type DeepValueOf from './types/utils/DeepValueOf';
+import type {OnyxUpdate} from "react-native-onyx";
 
 /**
  * This is a file containing constants for all the top level keys in our store
@@ -33,6 +34,9 @@ const ONYXKEYS = {
     /** Note: These are Persisted Requests - not all requests in the main queue as the key name might lead one to believe */
     PERSISTED_REQUESTS: 'networkRequestQueue',
     PERSISTED_ONGOING_REQUESTS: 'networkOngoingRequestQueue',
+
+    /** Updates to be applied later */
+    ONYX_UPDATE_QUEUE: 'onyxUpdateQueue',
 
     /** Stores current date */
     CURRENT_DATE: 'currentDate',
@@ -873,6 +877,7 @@ type OnyxValuesMapping = {
     [ONYXKEYS.IS_SIDEBAR_LOADED]: boolean;
     [ONYXKEYS.PERSISTED_REQUESTS]: OnyxTypes.Request[];
     [ONYXKEYS.PERSISTED_ONGOING_REQUESTS]: OnyxTypes.Request;
+    [ONYXKEYS.ONYX_UPDATE_QUEUE]: OnyxUpdate[];
     [ONYXKEYS.CURRENT_DATE]: string;
     [ONYXKEYS.CREDENTIALS]: OnyxTypes.Credentials;
     [ONYXKEYS.STASHED_CREDENTIALS]: OnyxTypes.Credentials;
