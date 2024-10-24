@@ -1154,17 +1154,14 @@ function updateGeneralSettings(policyID: string, name: string, currencyValue?: s
     if (customUnitID) {
         for (const rateID of Object.keys(currentRates)) {
             optimisticRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {currency: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE},
                 currency,
             };
             finallyRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {currency: null},
                 currency,
             };
             failureRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {currency: null},
                 errorFields: {currency: ErrorUtils.getMicroSecondOnyxErrorWithTranslationKey('common.genericErrorMessage')},
             };

@@ -346,11 +346,9 @@ function updatePolicyDistanceRateValue(policyID: string, customUnit: CustomUnit,
 
     for (const rateID of Object.keys(customUnit.rates)) {
         if (rateIDs.includes(rateID)) {
-            const foundRate = customUnitRates.find((rate) => rate.customUnitRateID === rateID);
-            optimisticRates[rateID] = {...foundRate, pendingFields: {rate: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
-            successRates[rateID] = {...foundRate, pendingFields: {rate: null}};
+            optimisticRates[rateID] = {pendingFields: {rate: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
+            successRates[rateID] = {pendingFields: {rate: null}};
             failureRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {rate: null},
                 errorFields: {rate: ErrorUtils.getMicroSecondOnyxErrorWithTranslationKey('common.genericErrorMessage')},
             };
@@ -417,11 +415,9 @@ function setPolicyDistanceRatesEnabled(policyID: string, customUnit: CustomUnit,
 
     for (const rateID of Object.keys(currentRates)) {
         if (rateIDs.includes(rateID)) {
-            const foundRate = customUnitRates.find((rate) => rate.customUnitRateID === rateID);
-            optimisticRates[rateID] = {...foundRate, pendingFields: {enabled: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
-            successRates[rateID] = {...foundRate, pendingFields: {enabled: null}};
+            optimisticRates[rateID] = {pendingFields: {enabled: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
+            successRates[rateID] = {pendingFields: {enabled: null}};
             failureRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {enabled: null},
                 errorFields: {enabled: ErrorUtils.getMicroSecondOnyxErrorWithTranslationKey('common.genericErrorMessage')},
             };
@@ -488,18 +484,13 @@ function deletePolicyDistanceRates(policyID: string, customUnit: CustomUnit, rat
     for (const rateID of Object.keys(currentRates)) {
         if (rateIDsToDelete.includes(rateID)) {
             optimisticRates[rateID] = {
-                ...currentRates[rateID],
                 enabled: false,
                 pendingAction: CONST.RED_BRICK_ROAD_PENDING_ACTION.DELETE,
             };
             failureRates[rateID] = {
-                ...currentRates[rateID],
                 pendingAction: null,
                 errors: ErrorUtils.getMicroSecondOnyxErrorWithTranslationKey('common.genericErrorMessage'),
             };
-        } else {
-            optimisticRates[rateID] = currentRates[rateID];
-            successRates[rateID] = currentRates[rateID];
         }
     }
 
@@ -563,11 +554,9 @@ function updateDistanceTaxClaimableValue(policyID: string, customUnit: CustomUni
 
     for (const rateID of Object.keys(customUnit.rates)) {
         if (rateIDs.includes(rateID)) {
-            const foundRate = customUnitRates.find((rate) => rate.customUnitRateID === rateID);
-            optimisticRates[rateID] = {...foundRate, pendingFields: {taxClaimablePercentage: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
-            successRates[rateID] = {...foundRate, pendingFields: {taxClaimablePercentage: null}};
+            optimisticRates[rateID] = {pendingFields: {taxClaimablePercentage: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
+            successRates[rateID] = {pendingFields: {taxClaimablePercentage: null}};
             failureRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {taxClaimablePercentage: null},
                 errorFields: {taxClaimablePercentage: ErrorUtils.getMicroSecondOnyxErrorWithTranslationKey('common.genericErrorMessage')},
             };
@@ -634,11 +623,9 @@ function updateDistanceTaxRate(policyID: string, customUnit: CustomUnit, customU
 
     for (const rateID of Object.keys(customUnit.rates)) {
         if (rateIDs.includes(rateID)) {
-            const foundRate = customUnitRates.find((rate) => rate.customUnitRateID === rateID);
-            optimisticRates[rateID] = {...foundRate, pendingFields: {taxRateExternalID: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
-            successRates[rateID] = {...foundRate, pendingFields: {taxRateExternalID: null}};
+            optimisticRates[rateID] = {pendingFields: {taxRateExternalID: CONST.RED_BRICK_ROAD_PENDING_ACTION.UPDATE}};
+            successRates[rateID] = {pendingFields: {taxRateExternalID: null}};
             failureRates[rateID] = {
-                ...currentRates[rateID],
                 pendingFields: {taxRateExternalID: null},
                 errorFields: {taxRateExternalID: ErrorUtils.getMicroSecondOnyxErrorWithTranslationKey('common.genericErrorMessage')},
             };
