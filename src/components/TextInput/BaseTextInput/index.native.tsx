@@ -27,6 +27,7 @@ import useNativeDriver from '@libs/useNativeDriver';
 import variables from '@styles/variables';
 import CONST from '@src/CONST';
 import type {BaseTextInputProps, BaseTextInputRef} from './types';
+import useInputFilters from "@components/TextInput/useInputFilters/index.native";
 
 function BaseTextInput(
     {
@@ -218,6 +219,8 @@ function BaseTextInput(
         }
         hasValueRef.current = false;
     }, [value]);
+
+    useInputFilters(input, inputProps.inputFilters);
 
     /**
      * Set Value & activateLabel

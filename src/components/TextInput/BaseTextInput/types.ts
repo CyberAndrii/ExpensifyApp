@@ -2,6 +2,7 @@ import type {MarkdownStyle} from '@expensify/react-native-live-markdown';
 import type {GestureResponderEvent, StyleProp, TextInputProps, TextStyle, ViewStyle} from 'react-native';
 import type {AnimatedTextInputRef} from '@components/RNTextInput';
 import type IconAsset from '@src/types/utils/IconAsset';
+import {InputFilter} from "@components/TextInput/useInputFilters/types";
 
 type CustomBaseTextInputProps = {
     /** Input label */
@@ -88,6 +89,9 @@ type CustomBaseTextInputProps = {
 
     /** Callback to update the value on Form when input is used in the Form component. */
     onInputChange?: (value: string) => void;
+
+    /** Filters the input, e.g. to be a correct decimal number */
+    inputFilters?: InputFilter[];
 
     /** Whether we should wait before focusing the TextInput, useful when using transitions  */
     shouldDelayFocus?: boolean;

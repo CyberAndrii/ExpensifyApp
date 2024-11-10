@@ -28,6 +28,7 @@ import useNativeDriver from '@libs/useNativeDriver';
 import variables from '@styles/variables';
 import CONST from '@src/CONST';
 import type {BaseTextInputProps, BaseTextInputRef} from './types';
+import useInputFilters from "@components/TextInput/useInputFilters";
 
 function BaseTextInput(
     {
@@ -223,17 +224,21 @@ function BaseTextInput(
         }
         hasValueRef.current = false;
     }, [value]);
+    
+    const filter = useInputFilters(inputProps.inputFilters);
 
     /**
      * Set Value & activateLabel
      */
     const setValue = (newValue: string) => {
-        onInputChange?.(newValue);
+        const filteredValue = filter(value ?? '', newValue);
+
+        onInputChange?.(filteredValue);
 
         if (inputProps.onChangeText) {
-            Str.result(inputProps.onChangeText, newValue);
+            Str.result(inputProps.onChangeText, filteredValue);
         }
-        if (newValue && newValue.length > 0) {
+        if (filteredValue && filteredValue.length > 0) {
             hasValueRef.current = true;
             // When the componment is uncontrolled, we need to manually activate the label:
             if (value === undefined) {

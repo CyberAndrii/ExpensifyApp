@@ -9,6 +9,7 @@ import android.os.Process
 import androidx.multidex.MultiDexApplication
 import com.expensify.chat.bootsplash.BootSplashPackage
 import com.expensify.chat.shortcutManagerModule.ShortcutManagerPackage
+import com.expensify.chat.inputFiltersModule.InputFiltersPackage
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
@@ -33,6 +34,7 @@ class MainApplication : MultiDexApplication(), ReactApplication {
             // Packages that cannot be autolinked yet can be added manually here, for example:
             // add(MyReactNativePackage());
             add(ShortcutManagerPackage())
+            add(InputFiltersPackage())
             add(BootSplashPackage())
             add(ExpensifyAppPackage())
             add(RNTextInputResetPackage())
