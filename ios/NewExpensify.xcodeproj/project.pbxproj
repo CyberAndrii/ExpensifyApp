@@ -42,10 +42,15 @@
 		9E17CB36A6B22BDD4BE53561 /* libPods-NotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9196A72C11B91A52A43D6E8A /* libPods-NotificationServiceExtension.a */; };
 		ACA597C323AA39404655647F /* libPods-NewExpensify-NewExpensifyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF33B19FC6A7FE676839430D /* libPods-NewExpensify-NewExpensifyTests.a */; };
 		BDB853621F354EBB84E619C2 /* ExpensifyNewKansas-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AFB39EC1D44BF9B91D3227 /* ExpensifyNewKansas-MediumItalic.otf */; };
+		CED49DCB2CE1320B00F15C0E /* InputFiltersModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED49DCA2CE1320B00F15C0E /* InputFiltersModule.swift */; };
+		CED49DCE2CE1361F00F15C0E /* InputFilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED49DCD2CE1361F00F15C0E /* InputFilterDelegate.swift */; };
+		CED49DD02CE136DA00F15C0E /* InputFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED49DCF2CE136DA00F15C0E /* InputFilter.swift */; };
+		CED49DD22CE1371200F15C0E /* DecimalNumberFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED49DD12CE1371200F15C0E /* DecimalNumberFilter.swift */; };
+		CED49DD52CE1483A00F15C0E /* InputFiltersModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CED49DD42CE1483900F15C0E /* InputFiltersModule.m */; };
 		D27CE6B77196EF3EF450EEAC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F9E814828D91464DF9D35 /* PrivacyInfo.xcprivacy */; };
 		DD79042B2792E76D004484B4 /* RCTBootSplash.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD79042A2792E76D004484B4 /* RCTBootSplash.mm */; };
 		DDCB2E57F334C143AC462B43 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20D83B0E39BA6D21761E72 /* ExpoModulesProvider.swift */; };
-		E51DC681C7DEE40AEBDDFBFE /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		E51DC681C7DEE40AEBDDFBFE /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		E9DF872D2525201700607FDC /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9DF872C2525201700607FDC /* AirshipConfig.plist */; };
 		ED222ED90E074A5481A854FA /* ExpensifyNeue-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B28D84EF339436DBD42A203 /* ExpensifyNeue-BoldItalic.otf */; };
 		F0C450EA2705020500FD2970 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = F0C450E92705020500FD2970 /* colors.json */; };
@@ -146,6 +151,11 @@
 		BF6A4C5167244B9FB8E4D4E3 /* ExpensifyNeue-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ExpensifyNeue-Italic.otf"; path = "../assets/fonts/native/ExpensifyNeue-Italic.otf"; sourceTree = "<group>"; };
 		C0417E996D1C834CDF0BF0F7 /* Pods-NewExpensify-NewExpensifyTests.debugadhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewExpensify-NewExpensifyTests.debugadhoc.xcconfig"; path = "Target Support Files/Pods-NewExpensify-NewExpensifyTests/Pods-NewExpensify-NewExpensifyTests.debugadhoc.xcconfig"; sourceTree = "<group>"; };
 		CA5677EEAC9784567B912881 /* Pods-NewExpensify-NewExpensifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewExpensify-NewExpensifyTests.debug.xcconfig"; path = "Target Support Files/Pods-NewExpensify-NewExpensifyTests/Pods-NewExpensify-NewExpensifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CED49DCA2CE1320B00F15C0E /* InputFiltersModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFiltersModule.swift; sourceTree = "<group>"; };
+		CED49DCD2CE1361F00F15C0E /* InputFilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFilterDelegate.swift; sourceTree = "<group>"; };
+		CED49DCF2CE136DA00F15C0E /* InputFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFilter.swift; sourceTree = "<group>"; };
+		CED49DD12CE1371200F15C0E /* DecimalNumberFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalNumberFilter.swift; sourceTree = "<group>"; };
+		CED49DD42CE1483900F15C0E /* InputFiltersModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputFiltersModule.m; sourceTree = "<group>"; };
 		D2AFB39EC1D44BF9B91D3227 /* ExpensifyNewKansas-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ExpensifyNewKansas-MediumItalic.otf"; path = "../assets/fonts/native/ExpensifyNewKansas-MediumItalic.otf"; sourceTree = "<group>"; };
 		D7C206AC464C89FB4899E0AD /* Pods-NotificationServiceExtension.releasedevelopment.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.releasedevelopment.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.releasedevelopment.xcconfig"; sourceTree = "<group>"; };
 		D846D749FDDC2C914007C87D /* Pods-NewExpensify-NewExpensifyTests.releaseadhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewExpensify-NewExpensifyTests.releaseadhoc.xcconfig"; path = "Target Support Files/Pods-NewExpensify-NewExpensifyTests/Pods-NewExpensify-NewExpensifyTests.releaseadhoc.xcconfig"; sourceTree = "<group>"; };
@@ -178,8 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				383643682B6D4AE2005BB9AE /* DeviceCheck.framework in Frameworks */,
-				E51DC681C7DEE40AEBDDFBFE /* (null) in Frameworks */,
-				E51DC681C7DEE40AEBDDFBFE /* (null) in Frameworks */,
+				E51DC681C7DEE40AEBDDFBFE /* BuildFile in Frameworks */,
+				E51DC681C7DEE40AEBDDFBFE /* BuildFile in Frameworks */,
 				8744C5400E24E379441C04A4 /* libPods-NewExpensify.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +224,7 @@
 		13B07FAE1A68108700A75B9A /* NewExpensify */ = {
 			isa = PBXGroup;
 			children = (
+				CED49DC92CE1306700F15C0E /* InputFiltersModule */,
 				7FB680AD2CC94EDA006693CF /* GoogleService-Info.plist */,
 				7F3784A72C75131000063508 /* NewExpensifyReleaseProduction.entitlements */,
 				7F3784A62C7512D900063508 /* NewExpensifyReleaseAdHoc.entitlements */,
@@ -348,6 +359,18 @@
 				F4F8A052A22040339996324B /* ExpensifyNeue-Regular.otf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		CED49DC92CE1306700F15C0E /* InputFiltersModule */ = {
+			isa = PBXGroup;
+			children = (
+				CED49DCA2CE1320B00F15C0E /* InputFiltersModule.swift */,
+				CED49DCD2CE1361F00F15C0E /* InputFilterDelegate.swift */,
+				CED49DCF2CE136DA00F15C0E /* InputFilter.swift */,
+				CED49DD12CE1371200F15C0E /* DecimalNumberFilter.swift */,
+				CED49DD42CE1483900F15C0E /* InputFiltersModule.m */,
+			);
+			path = InputFiltersModule;
 			sourceTree = "<group>";
 		};
 		EC29677F0A49C2946A495A33 /* Pods */ = {
@@ -913,11 +936,16 @@
 			files = (
 				18D050E0262400AF000D658B /* BridgingFile.swift in Sources */,
 				0DFC45942C884E0A00B56C91 /* RCTShortcutManagerModule.m in Sources */,
+				CED49DD52CE1483A00F15C0E /* InputFiltersModule.m in Sources */,
 				0F5E5350263B73FD004CA14F /* EnvironmentChecker.m in Sources */,
+				CED49DCE2CE1361F00F15C0E /* InputFilterDelegate.swift in Sources */,
 				374FB8D728A133FE000D84EF /* OriginImageRequestHandler.mm in Sources */,
+				CED49DCB2CE1320B00F15C0E /* InputFiltersModule.swift in Sources */,
+				CED49DD02CE136DA00F15C0E /* InputFilter.swift in Sources */,
 				7041848526A8E47D00E09F4D /* RCTStartupTimer.m in Sources */,
 				DD79042B2792E76D004484B4 /* RCTBootSplash.mm in Sources */,
 				0CDA8E34287DD650004ECBEC /* AppDelegate.mm in Sources */,
+				CED49DD22CE1371200F15C0E /* DecimalNumberFilter.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				DDCB2E57F334C143AC462B43 /* ExpoModulesProvider.swift in Sources */,
 			);
