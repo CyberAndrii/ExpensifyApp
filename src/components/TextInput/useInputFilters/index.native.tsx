@@ -16,8 +16,11 @@ function useInputFilters(ref: MutableRefObject<TextInput | null>, filters?: Inpu
             // Calls native Java/Swift code
             InputFiltersModule.install(viewId, filters);
         }
-        
-        // todo: does it need to be cleaned up?
+
+        // todo: clean up
+        //return () => {
+        //    InputFiltersModule.uninstall(viewId, filters);
+        //};
     }, [ref.current, filters]);
 }
 

@@ -8,16 +8,10 @@ import java.util.regex.Pattern;
 
 public final class DecimalNumberFilter implements InputFilter {
 
-    private final int maxDigitsBeforeDecimal;
-    private final int maxDigitsAfterDecimal;
-
     private final StringBuilder newInput;
     private final Pattern pattern;
 
     public DecimalNumberFilter(int maxDigitsBeforeDecimal, int maxDigitsAfterDecimal) {
-        this.maxDigitsBeforeDecimal = maxDigitsBeforeDecimal;
-        this.maxDigitsAfterDecimal = maxDigitsAfterDecimal;
-
         newInput = new StringBuilder();
         pattern = Pattern.compile("^\\d{0," + maxDigitsBeforeDecimal + "}(\\.\\d{0," + maxDigitsAfterDecimal + "})?$");
     }
@@ -58,6 +52,17 @@ public final class DecimalNumberFilter implements InputFilter {
     // Alternative implementation without using Regex.
 
     /*
+    private final int maxDigitsBeforeDecimal;
+    private final int maxDigitsAfterDecimal;
+
+    private final StringBuilder newInput;
+
+    public DecimalNumberFilter(int maxDigitsBeforeDecimal, int maxDigitsAfterDecimal) {
+        this.maxDigitsBeforeDecimal = maxDigitsBeforeDecimal;
+        this.maxDigitsAfterDecimal = maxDigitsAfterDecimal;
+        newInput = new StringBuilder();
+    }
+
     @Override
     public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
         newInput.setLength(0);

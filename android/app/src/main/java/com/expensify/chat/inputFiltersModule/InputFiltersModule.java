@@ -24,7 +24,7 @@ public final class InputFiltersModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void install(final int viewId, ReadableArray filterOptions) {
+    public void install(int viewId, ReadableArray filterOptions) {
         InputFilter[] filters = getFilters(filterOptions);
 
         getCurrentActivity().runOnUiThread(() -> {
@@ -42,6 +42,7 @@ public final class InputFiltersModule extends ReactContextBaseJavaModule {
             ReadableMap options = filterOptions.getMap(i);
             String type = options.getString("type");
 
+            // todo: use strategy pattern
             if (type.equals("DecimalNumber")) {
                 int maxDigitsBeforeDecimal = options.getInt("maxDigitsBeforeDecimal");
                 int maxDigitsAfterDecimal = options.getInt("maxDigitsAfterDecimal");
