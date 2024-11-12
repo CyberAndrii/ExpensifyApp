@@ -25,13 +25,22 @@ public final class InputFiltersModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void install(int viewId, ReadableArray filterOptions) {
-        InputFilter[] filters = getFilters(filterOptions);
 
         getCurrentActivity().runOnUiThread(() -> {
             EditText editText = getCurrentActivity().findViewById(viewId);
-            if (editText != null) {
-                editText.setFilters(filters);
+
+            if (editText == null) {
+                return;
             }
+
+            InputFilter[] currentFilters = editText.getFilters();
+            InputFilter[] newFilters = getFilters(filterOptions);
+            InputFilter[] combinedFilters = new InputFilter[currentFilters.length + newFilters.length];
+
+            System.arraycopy(currentFilters, 0, combinedFilters, 0, currentFilters.length);
+            System.arraycopy(newFilters, 0, combinedFilters, currentFilters.length, newFilters.length);
+
+            editText.setFilters(combinedFilters);
         });
     }
 
