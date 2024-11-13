@@ -16,7 +16,7 @@ class InputFiltersModule: NSObject, RCTBridgeModule {
     return "InputFiltersModule"
   }
 
-  @objc func install(_ viewId: NSNumber, filterOptions: NSArray) throws {
+  @objc func install(_ viewId: NSNumber, filterOptions: NSArray) {
     DispatchQueue.main.async {
       guard let reactView = UIApplication.shared.delegate?.window??.rootViewController?.view,
             let textField = reactView.viewWithTag(viewId.intValue) as? UITextField else {
