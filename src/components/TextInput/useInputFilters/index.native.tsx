@@ -13,8 +13,14 @@ function useInputFilters(ref: MutableRefObject<TextInput | null>, filters?: Inpu
         const viewId = findNodeHandle(ref.current);
 
         if (viewId && filters && filters.length > 0) {
-            // Calls native Java/Swift code
-            InputFiltersModule.install(viewId, filters);
+            const onError = (args: [string] | string) => {
+                // Array of strings on iOS. String on Android
+                const error = Array.isArray(args) ? args[0] : args;
+                console.error(`An error occured while invoking native InputFilters module`, error);
+            };
+
+            // Call to native Java/Swift code
+            InputFiltersModule.install(viewId, filters, onError);
         }
 
         // todo: clean up
