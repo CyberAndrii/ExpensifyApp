@@ -31,15 +31,15 @@ function promptToOpenInDesktopApp(currentUserAccountID?: number, currentUserAuto
         beginDeepLinkRedirectAfterTransition();
     } else {
         // Match any magic link (/v/<account id>/<6 digit code>)
-        const matchedMagicLink = window.location.pathname.match(CONST.REGEX.ROUTES.VALIDATE_LOGIN);
-        const accountIDFromMagicLink = Number(matchedMagicLink?.[0]);
+        const isMagicLink = CONST.REGEX.ROUTES.VALIDATE_LOGIN.test(window.location.pathname);
+        const accountIDFromMagicLink = isMagicLink ? Number(window.location.pathname.slice(3, window.location.pathname.indexOf('/', 3))) : undefined;
 
         if (accountIDFromMagicLink === currentUserAccountID && currentUserAutoAuthState === CONST.AUTO_AUTH_STATE.JUST_SIGNED_IN) {
-            console.log(`ddd beginDeepLinkRedirect 1`)
+            console.log(`ddd beginDeepLinkRedirect 1`, {accountIDFromMagicLink, currentUserAccountID, currentUserAutoAuthState, initialUrl})
             beginDeepLinkRedirect(true);
         } else {
-            console.log(`ddd beginDeepLinkRedirect 2`)
-            beginDeepLinkRedirect(!matchedMagicLink, getInternalNewExpensifyPath(initialUrl));
+            console.log(`ddd beginDeepLinkRedirect 2`, {accountIDFromMagicLink, currentUserAccountID, currentUserAutoAuthState, initialUrl})
+            beginDeepLinkRedirect(!isMagicLink, getInternalNewExpensifyPath(initialUrl));
         }
     }
 }
