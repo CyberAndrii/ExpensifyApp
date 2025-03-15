@@ -119,7 +119,8 @@ function Expensify() {
     }, [isCheckingPublicRoom]);
 
     const isAuthenticated = useIsAuthenticated();
-    const autoAuthState = useMemo(() => session?.autoAuthState ?? '', [session]);
+    const accountID = useMemo(() => session?.accountID, [session]);
+    const autoAuthState = useMemo(() => session?.autoAuthState, [session]);
 
     const shouldInit = isNavigationReady && hasAttemptedToOpenPublicRoom;
     const isSplashVisible = splashScreenState === CONST.BOOT_SPLASH_STATE.VISIBLE;
@@ -265,6 +266,7 @@ function Expensify() {
     return (
         <DeeplinkWrapper
             isAuthenticated={isAuthenticated}
+            accountID={accountID}
             autoAuthState={autoAuthState}
             initialUrl={initialUrl ?? ''}
         >
